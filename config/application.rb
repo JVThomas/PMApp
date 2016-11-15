@@ -16,8 +16,8 @@ module UPennDYK
     
 		 config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put]
+        origins 'https://upenn-fact-app.herokuapp.com'
+        resource 'https://upenn-fact-app.herokuapp.com', :headers => :any, :methods => [:get, :post, :options, :delete, :put]
       end
     end
 	end
