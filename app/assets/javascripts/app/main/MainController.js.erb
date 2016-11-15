@@ -1,21 +1,45 @@
 function MainController(ImageService){
 	var ctrl = this;
 	ctrl.currentImage = "";
-	ctrl.currentIndex = 0;
+	ctrl.currentIndex = -1;
+	ctrl.imageArray = [];
 	
-	ImageService.getImages.then(function(imageArray){	
-		ctrl.setImage();
-		ctrl.imageArray = imageArray;
-	});
+	 ctrl.imageArray.push('<%=image_path("img1.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img2.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img3.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img4.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img5.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img6.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img7.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img8.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img9.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img10.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img11.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img12.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img13.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img14.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img15.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img16.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img17.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img18.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img19.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img20.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img21.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img22.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img23.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img24.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img25.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img26.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img27.jpg")%>');
+	 ctrl.imageArray.push('<%=image_path("img28.jpg")%>');
 
-	setInterval(function(){
-		ctrl.setImage();
-	}, 10000);
 
 	ctrl.setImage = function(){
-		ctrl.currentIndex === ctrl.imageArray.length ? ctrl.currentIndex = 0 : ctrl.currentIndex += 1;
+		ctrl.currentIndex === ctrl.imageArray.length - 1 ? ctrl.currentIndex = 0 : ctrl.currentIndex += 1;
 		ctrl.currentImage = ctrl.imageArray[ctrl.currentIndex];
-	}	
+	}
+
+	ctrl.setImage();	
 }
 
 MainController.$inject = ['ImageService'];

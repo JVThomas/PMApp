@@ -4,9 +4,4 @@ class ApplicationController < ActionController::Base
 	def angular
 		render 'layouts/application'
 	end
-
-	def images
-		@images = Dir.glob("app/assets/images/*.jpg")
-		render json: @images
-	end
 end

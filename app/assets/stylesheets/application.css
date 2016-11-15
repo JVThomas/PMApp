@@ -12,4 +12,48 @@
  *
  *= require_tree .
  *= require_self
+ *= require materialize
  */
+
+/************************MAIN********************************************************************/
+.brand-logo{
+	height:60px;
+	margin-top: 5px;
+}
+
+.buttonContainer{
+	margin-top: 1em;
+	position: relative;
+	text-align: center;
+}
+
+.image-container{
+	margin-top: 3em;
+	position: absolute;
+}
+
+
+.fade.ng-enter, .fade.ng-leave{
+	transition: 1s linear all;
+}
+.fade.ng-enter {
+	opacity: 0
+	z-index: -1000;
+}
+
+.fade.ng-enter-active.ng-enter{
+	opacity: 1
+	z-index: -1000;
+}
+
+.fade.ng-leave{
+	opacity: 1;
+}
+
+.fade.ng-leave-active.ng-leave{
+	opacity: 0;
+}
+
+.row{
+	position: relative;
+}
