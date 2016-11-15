@@ -1,0 +1,26 @@
+function MainController(ImageService){
+	var ctrl = this;
+	ctrl.currentImage = "";
+	ctrl.currentIndex = 0;
+	
+	ImageService.getImages.then(function(imageArray){	
+		ctrl.setImage();
+		ctrl.imageArray = imageArray;
+	});
+
+	setInterval(function(){
+		ctrl.setImage();
+	}, 10000);
+
+	ctrl.setImage = function(){
+		ctrl.currentIndex === ctrl.imageArray.length ? ctrl.currentIndex = 0 : ctrl.currentIndex += 1;
+		ctrl.currentImage = ctrl.imageArray[ctrl.currentIndex];
+	}	
+}
+
+MainController.$inject = ['ImageService'];
+
+
+angular
+	.module('app')
+	.controller('MainController', MainController);
